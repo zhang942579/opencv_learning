@@ -10,13 +10,13 @@ url = 'https://jobs.zhaopin.com/'
 
 page_text = requests.get(url=url, headers=headers).text
 tree = etree.HTML(page_text)
-div_list = tree.xpath('/html/body/div/div[3]/div[1]/div[3]/div/div[3]/div[1]/div[2]/a[1]')
+div_list = tree.xpath('//*[@id="root"]/div[3]/div[1]/div[2]/div[2]/a[1]')
 a_occupations = []
-#for a in div_list:
-    #a_occupation = a.xpath('./a/text()')[0]
-a_occupations.append(div_list)
+# for a in div_list:
+#     a_occupation = a.xpath('./a/text()')[0]
+#     a_occupations.append(div_list)
 
-print(a_occupations)
+print(div_list)
 
 
 
